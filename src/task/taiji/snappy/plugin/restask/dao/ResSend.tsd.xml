@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE snappydb-scripts PUBLIC
+    "-//SnappyDB/SnappyDB Script DTD 1.0//EN"
+    "http://www.taiji.com.cn/snappydb-scripts-1.0.dtd" >
+<snappydb-scripts namespace="ctdb.resSendTask">
+	<default>
+		<script name="query">
+			<sql>
+			<![CDATA[
+			SELECT * FROM res_send_task
+			where 1=1
+			<#if keyWord?exists && keyWord.isNotEmpty()>
+				and key_Word like '%${keyWord}%'
+	        </#if>
+			<#if taskStatus?exists && taskStatus.isNotEmpty()>
+				and task_Status = '${taskStatus}'
+	        </#if>
+			]]>
+			</sql>
+		</script>
+	</default>
+</snappydb-scripts>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<snappy-framework-plugin id="TAIJI_MONITOR_PLUGIN" name="monitor" version="1.0.0"> 
+	<properties> 
+		<property name="PLUGIN_INITLIZATION">taiji.snappy.plugin.monitor.MonitorInitlization</property> 
+	</properties>  
+	<resources> 
+		<snappywebs> 
+			<snappyweb src="taiji/snappy/plugin/monitor/monitor-web.xml"/> 
+		</snappywebs>  
+		<snappydbs> 
+			<snappydb src="taiji/snappy/plugin/monitor/monitor-database.xml"/> 
+		</snappydbs> 
+	</resources>  
+	<items> 
+		<item id="RES_CURRENT" name="CURRENT_CONTROL" url="resCurrent.query.do?action=query"> 
+			<function id="RES_CURRENT" name="查询"/>  
+			<function id="RES_CURRENT_C" name="新增"/>  
+			<function id="RES_CURRENT_M" name="修改"/>  
+			<function id="RES_CURRENT_D" name="删除"/> 
+		</item>  
+		<item id="CT_PARAM" name="参数配置" url="ctParam.query.do?action=query">
+			<function id="CT_PARAM" name="查询"/>
+			<function id="CT_PARAM_C" name="新增"/>
+			<function id="CT_PARAM_M" name="修改"/>
+		</item>
+	</items> 
+</snappy-framework-plugin>

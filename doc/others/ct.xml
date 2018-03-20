@@ -1,0 +1,13 @@
+<!--
+
+    Context configuration file for the Tomcat Manager Web App
+
+    $Id: manager.xml,v 1.2 2004/02/20 17:09:29 remm Exp $
+
+-->
+      <Context path="/ct" docBase="D:\java\newwork\ct\WebRoot" reloadable="false"
+	       useHttpOnly="false">    
+
+	 </Context>
+               <!--newnetserver url="jdbc:mysql://localhost:3306/newnetserver"/>-->
+ <!--url="jdbc:mysql://192.168.10.161:3306/netmeter_v2_1_5"/> -->

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE snappydb-configuration PUBLIC "-//SnappyDB/SnappyDB Configuration DTD 1.0//EN" "http://www.taiji.com.cn/snappydb-configuration-1.0.dtd">
+
+<snappydb-configuration>
+	<databases>
+		<database name="ctdb">
+			<tables>
+				<table id="ctdb.resSendTask" name="res_send_task" keygen="uuid"/>
+				<table id="ctdb.dataImChat" name="data_im_chat" keygen="assign"/>
+				<table id="ctdb.resCaseType" name="res_case_type" keygen="assign"/>
+			</tables>
+			<scripts>
+				<script resource="taiji/snappy/plugin/restask/dao/ResSend.tsd.xml"/>
+				<script resource="taiji/snappy/plugin/restask/dao/DataImChat.tsd.xml"/>
+			</scripts>
+		</database>
+	</databases>
+</snappydb-configuration>

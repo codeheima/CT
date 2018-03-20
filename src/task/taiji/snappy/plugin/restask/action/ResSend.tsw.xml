@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s:module id="resSend" bean="ResSendAction" namespace="task" xmlns:s="http://www.taiji.com.cn/snappy" xmlns:a="http://www.taiji.com.cn/snappy/area" xmlns:e="http://www.taiji.com.cn/snappy/element">
+	<s:function id="query" name="下发任务" input="default" method="query" role="TASK_RES_SEND">
+		<s:view>
+			<a:form>
+				<a:table id="condication" class="condicationTable">
+					<a:tr>
+						<a:td width="20%" class="labeltd"><e:label refid="keyWord"/></a:td>
+						<a:td><e:text id="keyWord" description="关键字"/></a:td>				
+					</a:tr>	
+					<a:tr>
+						<a:td width="20%" class="labeltd"><e:label refid="taskStatus"/></a:td>
+						<a:td><e:text id="taskStatus" description="状态"/></a:td>				
+					</a:tr>	
+					
+				</a:table>	
+				<a:table id="result" class="resultTable">
+					<a:tr class="headrow">
+						<a:th width="25"><e:check id="checkAll"/></a:th>
+						<a:th width="50" class="numbertd"><e:label value="序号"/></a:th>
+						<a:th><e:label value="查询事由"/></a:th>
+						<a:th><e:label value="关键字"/></a:th>
+						<a:th><e:label value="创建时间"/></a:th>
+						<a:th><e:label value="案件类型"/></a:th>
+						<a:th><e:label value="查询类型"/></a:th>
+						<a:th role="TASK_RES_SEND_D" class="actiontd"><e:label value="操作"/></a:th>						
+					</a:tr>
+					<a:tr bean="resultPage" style="text-align:center">
+						<a:td><e:check id="checkItem" value="${val.taskId}"/></a:td>
+						<a:td class="numbertd"><e:sequence id="_rownum"/></a:td>
+						<a:td><e:label id="createReason"/></a:td>
+						<a:td><e:label id="keyWord"/></a:td>
+						<a:td><e:label id="createTime"/></a:td>
+						<a:td><e:label id="caseType" dictype="DIC_CASE_TYPE"/></a:td>
+						<a:td><e:label id="sourceType" dictype = "DIC_SOURCE_TYPE"/></a:td>
+						<a:td role="TASK_RES_SEND_D" class="actiontd">
+							<e:actionlink actiontype="delete" link="/task/resSend.action.do?action=delete" linkparm="taskId"/>
+						</a:td>					
+					</a:tr>
+				</a:table>	
+				<a:div id="control">
+					<e:gbutton value="删除" icon="icon-remove" link="/task/resSend.action.do?action=batchdel" actiontype="check" removed="${val.taskStatusStr==1}"/>
+					<e:gbutton value="新增" icon="icon-add" link="resSend.action.do?action=create" removed="${val.taskStatusStr==1}"/>
+					<e:gbutton value="启动任务" icon="icon-add" link="javascript:startTask()" removed="${val.taskStatusStr==1}"/>
+				</a:div>										
+			</a:form>
+		</s:view>
+		<s:scripts>
+			<s:script>
+			<![CDATA[
+				function getCheckItem(){
+					var checkItemStr = '';
+					$("#result").find("input[type='checkbox']").each(function(){
+						if(this.checked){
+							if(checkItemStr != ""){
+								checkItemStr=checkItemStr + "、" + $(this).val();
+							}else{
+								checkItemStr=$(this).val();
+							}
+						}
+					});
+					return checkItemStr;
+				}
+				function startTask(){
+					var taskIds = getCheckItem();
+					window.location = '${util.root()}/task/resSend.startTaskConfig.do?action=create&taskIds='+taskIds;
+				}
+			]]>
+			</s:script>
+		</s:scripts>
+		<s:styles>
+			<s:style>
+				<![CDATA[
+				.resultTable td {
+					text-align:center;
+				}
+				]]>
+			</s:style>
+		</s:styles>
+		<s:actions>
+			<s:action id="query" input="default" role="TASK_RES_SEND"/>
+		</s:actions>
+		<s:forwards>
+			<s:forward id="default" url="${res.queryTemplate}"/>
+		</s:forwards>
+	</s:function>
+
+	<s:function id="action" input="default" method="action">
+		<s:view>
+			<a:form>
+				<a:table class="formTable">	
+					<a:tr>
+						<a:td colspan="2" class="splittd"><e:label value="发送任务"/></a:td>
+					</a:tr>
+					<a:tr>
+						<a:td width="20%" class="labeltd"><e:label refid="createReason"/></a:td>
+						<a:td><e:text id="createReason" required="true" description="查询事由"  max="32"/></a:td>
+					</a:tr>
+					<a:tr>
+						<a:td width="20%" class="labeltd"><e:label refid="caseType"/></a:td>
+						<a:td><e:droplist id="caseType" required="true" description="所属案件"  max="64" dictype="DIC_CASE_TYPE"/></a:td>
+					</a:tr>
+					<a:tr>
+						<a:td width="20%" class="labeltd"><e:label refid="keyWord"/></a:td>
+						<a:td><e:text id="keyWord" required="true" description="关键字"  max="256"/></a:td>
+					</a:tr>
+					<a:tr>
+						<a:td width="20%" class="labeltd"><e:label refid="sourceType"/></a:td>
+						<a:td><e:droplist id="sourceType" required="true" description="查询资源" dictype = "DIC_SOURCE_TYPE"/></a:td>
+					</a:tr>
+				</a:table>	
+
+				<a:div id="control">
+					<e:gbutton value="保存" icon="icon-save" link="javascript:onSave()"/>
+					<e:blank/>
+					<e:return icon="icon-back" link="/task/resSend.query.do?action=query"/>
+				</a:div>
+			</a:form>
+		</s:view>
+		<s:scripts>
+			<s:script>
+			<![CDATA[
+
+			]]>
+			</s:script>
+		</s:scripts>		
+		<s:actions>
+			<s:action id="delete" name="发送任务-删除" input="default" role="TASK_RES_SEND_D"/>
+			<s:action id="create" name="发送任务-删除" input="default" role="TASK_RES_SEND_D"/>
+			<s:action id="batchdel" name="发送任务-批量删除" input="default" role="TASK_RES_SEND_D"/>	
+		</s:actions>
+		<s:forwards>
+			<s:forward id="default" url="${res.actionTemplate}"/>
+			<s:forward id="query" url="/task/resSend.query.do?action=query" redirect="true"/>
+			<s:forward id="success" url="/task/resSend.query.do?action=query" redirect="true"/>
+		</s:forwards>
+	</s:function>	
+	<s:function id="startTaskConfig" name = "启动配置" method="startTaskConfig">
+		<s:view>
+			<a:form id="startConfigForm">
+				<e:hidden id="taskIds"/>
+				<a:table class="formTable">
+					<a:tr>
+						<a:td colspan="2" class="splittd"><e:label value="启动配置"/></a:td>
+					</a:tr>
+					<a:tr>			
+						<a:td width="20%" class="labeltd"><e:label refid="startTime"/></a:td>
+						<a:td><e:datehms id="startTime" required="true" description="开始时间：" onFocus=""/></a:td>
+					</a:tr>
+					<a:tr>
+						<a:td width="20%" class="labeltd"><e:label refid="endTime"/></a:td>
+						<a:td><e:datehms id="endTime" required="true" description="结束时间：" onFocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss',maxDate:'%y-%M-%d %H:%m:%s'})"/></a:td>
+					</a:tr>
+					<a:tr>
+						<a:td width="20%" class="labeltd"><e:label refid="cookies"/></a:td>
+						<a:td><e:textarea id="cookies" required="true" description="cookies"/></a:td>
+					</a:tr>
+				</a:table>	
+				<a:div id="control">
+					<e:gbutton value="保存" icon="icon-save" link="javascript:saveConfigs()"/>
+					<e:blank/>
+					<e:return icon="icon-back" link="/task/resSend.query.do?action=query"/>
+				</a:div>
+				
+			</a:form>
+		</s:view>
+		<s:scripts>
+			<s:script>
+				<![CDATA[
+					
+					function saveConfigs(){
+						var url = '${util.root()}/task/resSend.saveTaskConfig.do';
+						var params = $("#startConfigForm").serialize();
+						if(window.confirm("确定要启动任务么？")){
+							$.ajax({
+								url:url,
+								data:params,
+								success:function(data){
+									if(data.isSuccess){
+										alert(data.msg);
+										window.location='${util.root()}/resCurrent.ctl.do';
+									}else{
+										alert(data.msg);
+									}
+								},
+								error:function(){
+									alert("出错了");
+								}
+							});
+						
+						}
+					}
+				]]>
+			</s:script>
+		</s:scripts>
+		<s:actions>
+			<s:action id="create" name="发送任务" input="default"/>
+		</s:actions>
+		<s:forwards>
+			<s:forward id="default" url="${res.actionTemplate}"/>
+			<s:forward id="query" url="/task/resSend.query.do?action=query" redirect="true"/>
+			<s:forward id="success" url="/task/resSend.query.do?action=query" redirect="true"/>
+		</s:forwards>
+	</s:function>
+	<s:function id="saveTaskConfig" name="启动配置保存" method="saveTaskConfig" input="default" >
+		<s:actions>
+			<s:action id="create" name="发送任务" input="default" output="json"/>
+		</s:actions>
+	</s:function>
+</s:module>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<application-configuration id="example" name="SnappyWebFramework框架示例" version="1.0.0" build="2012-08-27">
+	<properties>
+		<!-- 是否缓存查询条件 -->
+		<property name="snappy.webcore.query.cache">true</property>
+		<!-- 是否必须登录访问 true:是 false：否 -->
+		<property name="snappy.webcore.login.check">false</property>
+
+		<!-- 使用CAS登录时，默认的角色 -->
+		<property name="snappy.webcore.caslogin.default.role">ADMIN</property>	
+		<!-- 是否允许重复登录，true允许 false不允许，默认配置值为false-->
+		<property name="snappy.webcore.repeat.login">false</property>	
+		<!-- 设定充许重复登录的用户，支持正则区配 -->
+		<property name="fdgh.framework.allow.repeat.loginid">taiji.*</property>			
+		
+		<!-- 单点登录默认角色 -->
+		<property name="snappy.webcore.ssologin.default.role">ADMIN</property>		
+		<!-- 单点登录认证中心地址 -->
+		<property name="snappy.webcore.ssologin.verify.center">http://192.168.56.129</property>
+		<!-- 浏览器flash插件下载地址 -->
+		<property name="snappy.web.flash.install.file">/resource/flash.exe</property>
+		
+		<!-- 用户是否允许关联多个用户组 0：不充许 1：充许 -->
+		<property name="snappy.plugin.auth.user.multi.group">1</property>		
+		<!-- 用户是否允许关联多个角色 0：不充许 1：充许 -->
+		<property name="snappy.plugin.auth.user.multi.role">1</property>	
+		<!-- 是否校验客户端IP地址，仅针对用户密码登录方式 	0：不校验 1：如果用户设置则校验 2：校验 -->
+		<property name="snappy.plugin.auth.client.ip.check">1</property>	
+		<!-- 是否校验客户端MAC地址，仅针对用户密码登录方式 	0：不校验 1：如果用户设置则校验 2：校验 -->
+		<property name="snappy.plugin.auth.client.mac.check">1</property>				
+			
+		<!-- 用户未绑定角色登录时，显示给用户的提示页面 -->
+		<property name="snappy.webcore.noauth.page">/test.jsp</property>		
+			
+	</properties>
+</application-configuration>

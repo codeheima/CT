@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE snappydb-configuration PUBLIC
+    "-//SnappyDB/SnappyDB Configuration DTD 1.0//EN"
+    "http://www.taiji.com.cn/snappydb-configuration-1.0.dtd" >
+<snappydb-configuration>
+<snappydb>
+	<properties>
+		<property name="snappydb.showsql">true</property>
+		<property name="snappydb.resource.reload">true</property>
+	</properties>
+</snappydb>
+<connection>
+	<provider name="systemdb|authdb|ctdb">
+		<properties>
+			<!-- 参数配置 da-->
+			<property name="snappydb.type">mysql</property>
+			<property name="snappydb.connection.driverclass">com.mysql.jdbc.Driver</property>
+			<property name="snappydb.connection.url">jdbc:mysql://localhost:3306/ct</property>
+			<property name="snappydb.connection.user">root</property>
+			<property name="snappydb.connection.password">root</property>
+			<property name="snappydb.connection.dbcp.initialSize">1</property>
+           	<property name="snappydb.connection.dbcp.maxActive">5</property>
+           	<property name="snappydb.connection.dbcp.minIdle">1</property>
+           	<property name="snappydb.connection.dbcp.maxIdle">5</property>			
+		</properties>		
+	</provider>	
+</connection>
+</snappydb-configuration>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s:module id="ctParam" bean="CtParamAction" namespace="" xmlns:s="http://www.taiji.com.cn/snappy" xmlns:a="http://www.taiji.com.cn/snappy/area" xmlns:e="http://www.taiji.com.cn/snappy/element">
+	<s:function id="query" name="参数配置" input="default" method="query" role="CT_PARAM">
+		<s:view>
+			<a:form>
+				
+				<a:table id="result" class="resultTable">
+					<a:tr class="headrow">
+						<a:th width="50" class="numbertd"><e:label value="序号"/></a:th>
+						<a:th><e:label value="数值"/></a:th>
+						<a:th><e:label value="描述"/></a:th>
+						<a:th role="CT_PARAM_M"  class="actiontd"><e:label value="操作"/></a:th>
+					</a:tr>
+					<a:tr bean="resultPage">
+						<a:td class="numbertd"><e:sequence id="_rownum"/></a:td>
+						<a:td><e:label id="caseId"/></a:td>
+						<a:td><e:label id="caseValue"/></a:td>
+						<a:td role="CT_PARAM_M" class="actiontd">
+							<e:actionlink actiontype="modify" link="ctParam.action.do?action=modify" linkparm="id" role="CT_PARAM_M"/>
+						</a:td>
+					</a:tr>
+				</a:table>	
+				<a:div id="control">
+					<e:gbutton value="新增" icon="icon-add" link="ctParam.action.do?action=create" role="CT_PARAM_C"/>
+				</a:div>										
+			</a:form>
+		</s:view>
+		<s:scripts>
+			<s:script>
+			<![CDATA[
+			
+			]]>
+			</s:script>
+		</s:scripts>
+		<s:actions>
+			<s:action id="query" input="default" role="CT_PARAM"/>
+		</s:actions>
+		<s:forwards>
+			<s:forward id="default" url="${res.queryTemplate}"/>
+		</s:forwards>
+	</s:function>
+
+	<s:function id="action" input="default" method="action">
+		<s:view>
+			<a:form>
+				<a:table class="formTable">	
+					<a:tr>
+						<a:td colspan="2" class="splittd"><e:label value="参数配置"/></a:td>
+					</a:tr>
+					<a:tr>
+						<a:td class="labeltd"><e:label refid="caseId"/></a:td>
+						<a:td><e:text id="caseId" required="false" description="数值"  max="256"/></a:td>
+					</a:tr>
+					<a:tr>
+						<a:td  class="labeltd"><e:label refid="caseValue"/></a:td>
+						<a:td><e:text id="caseValue" required="false" description="描述"  max="256"/></a:td>
+					</a:tr>
+				</a:table>	
+
+				<a:div id="control">
+					<e:gbutton value="保存" icon="icon-save" link="javascript:onSave()"/>
+					<e:blank/>
+					<e:return icon="icon-back" link="ctParam.query.do?action=query"/>
+				</a:div>
+			</a:form>
+		</s:view>
+		<s:scripts>
+			<s:script>
+			<![CDATA[
+
+			]]>
+			</s:script>
+		</s:scripts>		
+		<s:actions>
+			<s:action id="create" name="参数配置-新增" input="default" role="CT_PARAM_C"/>
+			<s:action id="modify" name="参数配置-修改" input="default" role="CT_PARAM_M"/>
+		</s:actions>
+		<s:forwards>
+			<s:forward id="default" url="${res.actionTemplate}"/>
+			<s:forward id="query" url="ctParam.query.do?action=query" redirect="true"/>
+			<s:forward id="success" url="ctParam.query.do?action=query" redirect="true"/>
+		</s:forwards>
+	</s:function>	
+	
+</s:module>

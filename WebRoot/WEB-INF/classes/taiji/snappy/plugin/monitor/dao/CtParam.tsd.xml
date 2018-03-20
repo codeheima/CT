@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE snappydb-scripts PUBLIC
+    "-//SnappyDB/SnappyDB Script DTD 1.0//EN"
+    "http://www.taiji.com.cn/snappydb-scripts-1.0.dtd" >
+<snappydb-scripts namespace="ctdb.ctParam">
+	<default>
+		<script name="query">
+			<sql>
+			<![CDATA[
+			SELECT * FROM res_case_type
+			]]>
+			</sql>
+		</script>
+	</default>
+</snappydb-scripts>

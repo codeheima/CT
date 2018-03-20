@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<snappyweb> 
+	<modules> 
+		<!--CURRENT_CONTROL-->  
+		<module src="taiji/snappy/plugin/monitor/action/ResCurrent.tsw.xml"/>  
+		<!--参数配置-->
+		<module src="taiji/snappy/plugin/monitor/action/CtParam.tsw.xml"/>
+	</modules>  
+	<beans> 
+		<bean src="taiji/snappy/plugin/monitor/monitor-bean.xml"/> 
+	</beans> 
+</snappyweb>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<snappy-framework-plugin id="TAIJI_RESTASK_PLUGIN" name="查询任务" version="1.0.0"> 
+	<properties> 
+		<property name="PLUGIN_INITLIZATION">taiji.snappy.plugin.restask.ResTaskInitlization</property> 
+	</properties>  
+	<resources> 
+		<snappywebs> 
+			<snappyweb src="taiji/snappy/plugin/restask/resTask-web.xml"/> 
+		</snappywebs>  
+		<snappydbs> 
+			<snappydb src="taiji/snappy/plugin/restask/resTask-database.xml"/> 
+		</snappydbs> 
+	</resources>  
+	<items> 
+		<item id="TASK_RES_SEND" name="发送任务" url="/task/resSend.query.do?action=query"> 
+			<function id="TASK_RES_SEND" name="查询"/>  
+			<function id="TASK_RES_SEND_D" name="删除"/> 
+		</item>  
+		<item id="TASK_DATA_IM_CHAT" name="群聊查询" url="/task/dataImChat.query.do?action=query">
+			<function id="TASK_DATA_IM_CHAT" name="查询"/>
+		</item>
+	</items> 
+</snappy-framework-plugin>

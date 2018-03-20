@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s:module id="dataImChat" bean="DataImChatAction" namespace="task" xmlns:s="http://www.taiji.com.cn/snappy" xmlns:a="http://www.taiji.com.cn/snappy/area" xmlns:e="http://www.taiji.com.cn/snappy/element">
+	<s:function id="query" name="群聊查询" input="default" method="query" role="TASK_DATA_IM_CHAT">
+		<s:view>
+			<a:form>
+				<a:table id="condication" class="condicationTable">
+					<a:tr>
+						<a:td  class="labeltd"><e:label refid="context"/></a:td>
+						<a:td><e:text id="context" description="聊天内容"/></a:td>				
+					</a:tr>		
+				</a:table>	
+				<a:table id="result" class="resultTable">
+					<a:tr class="headrow">
+						<a:th width="50" class="numbertd"><e:label value="序号"/></a:th>
+						<a:th><e:label value="sendId"/></a:th>
+						<a:th><e:label value="软件类型"/></a:th>
+						<a:th><e:label value="聊天类型"/></a:th>
+						<a:th><e:label value="群id"/></a:th>
+						<a:th><e:label value="发送时间"/></a:th>
+						<a:th><e:label value="IP区域"/></a:th>
+						<a:th><e:label value="IP地址"/></a:th>
+						<a:th><e:label value="接收人Id"/></a:th>
+						<a:th><e:label value="接收人账号"/></a:th>
+						<a:th><e:label value="聊天类型"/></a:th>
+						<a:th><e:label value="聊天内容"/></a:th>
+						<a:th><e:label value="附件"/></a:th>
+					</a:tr>
+					<a:tr bean="resultPage">
+						<a:td class="numbertd"><e:sequence id="_rownum"/></a:td>
+						<a:td><e:label id="sendId"/></a:td>
+						<a:td><e:label id="appType" dictype="DIC_APP_TYPE"/></a:td>
+						<a:td><e:label id="actionStr" dictype = "DIC_CHAT_TYPE"/></a:td>
+						<a:td><e:label id="groupId"/></a:td>
+						<a:td><e:label id="sendTime"/></a:td>
+						<a:td><e:label id="sendIpStrArea"/></a:td>
+						<a:td><e:label id="sendIpStr"/></a:td>
+						<a:td><e:label id="toId"/></a:td>
+						<a:td><e:label id="toUsername"/></a:td>
+						<a:td><e:label id="chatType" dictype = "DIC_CHAT_TYPE"/></a:td>
+						<a:td><e:label id="context" max="60"/></a:td>
+						<a:td><e:label id="mainFile"/></a:td>
+					</a:tr>
+				</a:table>	
+				<a:div id="control">
+				</a:div>										
+			</a:form>
+		</s:view>
+		<s:scripts>
+			<s:script>
+			<![CDATA[
+			
+			]]>
+			</s:script>
+		</s:scripts>
+		<s:actions>
+			<s:action id="query" input="default" role="TASK_DATA_IM_CHAT"/>
+		</s:actions>
+		<s:forwards>
+			<s:forward id="default" url="${res.queryTemplate}"/>
+		</s:forwards>
+	</s:function>
+
+	
+</s:module>

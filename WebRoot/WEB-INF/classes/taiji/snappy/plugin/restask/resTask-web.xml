@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<snappyweb> 
+	<modules> 
+		<!--发送任务-->  
+		<module src="taiji/snappy/plugin/restask/action/ResSend.tsw.xml"/>  
+		<!--群聊查询-->
+		<module src="taiji/snappy/plugin/restask/action/DataImChat.tsw.xml"/>
+	</modules>  
+	<beans> 
+		<bean src="taiji/snappy/plugin/restask/resTask-bean.xml"/> 
+	</beans> 
+</snappyweb>

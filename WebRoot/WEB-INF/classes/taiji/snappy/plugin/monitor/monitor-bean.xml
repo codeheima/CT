@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">  
+	<!--CURRENT_CONTROL-->  
+	<bean id="resCurrentService" class="taiji.snappy.plugin.monitor.service.impl.ResCurrentServiceImpl"/>  
+	<!--参数配置-->
+	<bean id="ctParamService" class="taiji.snappy.plugin.monitor.service.impl.CtParamServiceImpl"/>
+
+
+	<bean id="monitorService" class="taiji.snappy.plugin.monitor.service.impl.MonitorServiceImpl"/>  
+</beans>

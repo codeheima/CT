@@ -1,0 +1,7 @@
+#Mon Nov 20 13:58:39 CST 2017
+ctdb_type=mysql
+ctdb_host=127.0.0.1
+ctdb_user=root
+ctdb_port=3306
+ctdb_password=root
+ctdb_name=ct

@@ -1,0 +1,283 @@
+<?xml version="1.0" ?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN" "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+  	<tlib-version>2.2.3</tlib-version>
+  	<jsp-version>1.2</jsp-version>
+  	<short-name>e</short-name>
+  	<uri>/taiji-snappy-web-element</uri>
+  	<display-name>Taiji Snappy Web Element Taglib</display-name>
+  	<description>Taiji Snappy Web Element Taglib</description>
+
+	<tag>
+		<name>hidden</name> 
+		<tag-class>taiji.snappy.web.tags.element.HiddenElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>
+
+	<tag>
+		<name>text</name> 
+		<tag-class>taiji.snappy.web.tags.element.TextElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>
+	
+	<tag>
+		<name>numeric</name> 
+		<tag-class>taiji.snappy.web.tags.element.NumericElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>	
+	
+	<tag>
+		<name>int</name> 
+		<tag-class>taiji.snappy.web.tags.element.IntElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>	
+	
+	<tag>
+		<name>ip</name> 
+		<tag-class>taiji.snappy.web.tags.element.IpElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>
+	
+	<tag>
+		<name>email</name> 
+		<tag-class>taiji.snappy.web.tags.element.EmailElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>	
+	
+	<tag>
+		<name>idnumber</name> 
+		<tag-class>taiji.snappy.web.tags.element.IdNumberElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>	
+	
+	<tag>
+		<name>textarea</name> 
+		<tag-class>taiji.snappy.web.tags.element.TextAreaElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>		
+	
+	<tag>
+		<name>password</name> 
+		<tag-class>taiji.snappy.web.tags.element.PasswordElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>	
+	
+	<tag>
+		<name>date</name> 
+		<tag-class>taiji.snappy.web.tags.element.DateElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>
+	
+	<tag>
+		<name>dateh</name> 
+		<tag-class>taiji.snappy.web.tags.element.DateHElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>
+	
+	<tag>
+		<name>datehm</name> 
+		<tag-class>taiji.snappy.web.tags.element.DateHMElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>
+	
+	<tag>
+		<name>datehms</name> 
+		<tag-class>taiji.snappy.web.tags.element.DateHMSElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>	
+	
+	<tag>
+		<name>time</name> 
+		<tag-class>taiji.snappy.web.tags.element.TimeElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>
+	
+	<tag>
+		<name>radio</name> 
+		<tag-class>taiji.snappy.web.tags.element.RadioElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>	
+	
+	<tag>
+		<name>check</name> 
+		<tag-class>taiji.snappy.web.tags.element.CheckElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>
+	
+	<tag>
+		<name>droplist</name> 
+		<tag-class>taiji.snappy.web.tags.element.DropListElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>	
+	
+	<tag>
+		<name>select</name> 
+		<tag-class>taiji.snappy.web.tags.element.SelectElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>
+	
+	<tag>
+		<name>file</name> 
+		<tag-class>taiji.snappy.web.tags.element.FileElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>
+	
+	<tag>
+		<name>autocomplete</name> 
+		<tag-class>taiji.snappy.web.tags.element.AutoCompleteElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>
+	
+	<tag>
+		<name>pagination</name> 
+		<tag-class>taiji.snappy.web.tags.element.PaginationElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>	
+	
+	<tag>
+		<name>button</name> 
+		<tag-class>taiji.snappy.web.tags.element.ButtonElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>
+	
+	<tag>
+		<name>gbutton</name> 
+		<tag-class>taiji.snappy.web.tags.element.GButtonElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>	
+	
+	<tag>
+		<name>return</name> 
+		<tag-class>taiji.snappy.web.tags.element.ReturnElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>
+	
+	<tag>
+		<name>submit</name> 
+		<tag-class>taiji.snappy.web.tags.element.SubmitElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>
+	
+	<tag>
+		<name>reset</name> 
+		<tag-class>taiji.snappy.web.tags.element.ResetElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>	
+	
+	<tag>
+		<name>imgbtn</name> 
+		<tag-class>taiji.snappy.web.tags.element.ImageButtonElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>
+	
+	<tag>
+		<name>image</name> 
+		<tag-class>taiji.snappy.web.tags.element.ImageElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>
+	
+	<tag>
+		<name>label</name> 
+		<tag-class>taiji.snappy.web.tags.element.LabelElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>	
+	
+	<tag>
+		<name>link</name> 
+		<tag-class>taiji.snappy.web.tags.element.LinkElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>	
+	
+	<tag>
+		<name>actionlink</name> 
+		<tag-class>taiji.snappy.web.tags.element.ActionLinkElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>
+	
+	<tag>
+		<name>sequence</name> 
+		<tag-class>taiji.snappy.web.tags.element.SequenceElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>
+	
+	<tag>
+		<name>error</name> 
+		<tag-class>taiji.snappy.web.tags.element.ErrorElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>
+	
+	<tag>
+		<name>chart</name> 
+		<tag-class>taiji.snappy.web.tags.element.ChartElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>
+	
+	<tag>
+		<name>include</name> 
+		<tag-class>taiji.snappy.web.tags.element.IncludeElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>	
+	
+	<tag>
+		<name>iframe</name> 
+		<tag-class>taiji.snappy.web.tags.element.IFrameElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>		
+	
+	<tag>
+		<name>flash</name> 
+		<tag-class>taiji.snappy.web.tags.element.FlashElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>
+	
+	<tag>
+		<name>tree</name> 
+		<tag-class>taiji.snappy.web.tags.element.TreeElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>	
+	
+	<tag>
+		<name>simpletree</name> 
+		<tag-class>taiji.snappy.web.tags.element.SimpleTreeElementTag</tag-class> 
+		<body-content>empty</body-content> 		
+		<dynamic-attributes>true</dynamic-attributes>																																																																	
+	</tag>																																						
+</taglib> 

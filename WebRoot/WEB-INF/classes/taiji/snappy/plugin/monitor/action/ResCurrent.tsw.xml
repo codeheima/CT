@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s:module id="resCurrent" version="1.1" bean="ResCurrentAction" namespace="" xmlns:s="http://www.taiji.com.cn/snappy" xmlns:a="http://www.taiji.com.cn/snappy/area" xmlns:e="http://www.taiji.com.cn/snappy/element">
+	<s:function id="query" name="日志监控" input="default" method="query" role="RES_CURRENT">
+		<s:view>
+			<a:form>
+				<a:table id="condication" class="condicationTable">
+					<a:tr>
+						<a:td width="20%" class="labeltd"><e:label refid="keyWord"/></a:td>
+						<a:td><e:text id="keyWord" description="关键字"/></a:td>				
+					</a:tr>	
+					<a:tr>
+						<a:td width="20%" class="labeltd"><e:label refid="taskStatus"/></a:td>
+						<a:td><e:droplist id="taskStatus" description="状态" dictype="DIC_TASK_STATUS"/></a:td>				
+					</a:tr>	
+					
+				</a:table>	
+				<a:table id="result" class="resultTable">
+					<a:tr class="headrow">
+						<a:th width="25"><e:check id="checkAll"/></a:th>
+						<a:th width="50" class="numbertd"><e:label value="序号"/></a:th>
+						<a:th><e:label value="查询事由"/></a:th>
+						<a:th><e:label value="关键字"/></a:th>
+						<a:th><e:label value="创建时间"/></a:th>
+						<a:th><e:label value="案件类型"/></a:th>
+						<a:th><e:label value="任务状态"/></a:th>
+						<a:th><e:label value="最后入库时间"/></a:th>
+						<a:th role="TASK_RES_SEND_D" class="actiontd"><e:label value="操作"/></a:th>						
+					</a:tr>
+					<a:tr bean="resultPage">
+						<a:td><e:check id="checkItem" value="${val.taskId}"/></a:td>
+						<a:td class="numbertd"><e:sequence id="_rownum"/></a:td>
+						<a:td><e:label id="createReason"/></a:td>
+						<a:td><e:label id="keyWord"/></a:td>
+						<a:td><e:label id="createTime" format="yyyy-MM-dd"/></a:td>
+						<a:td><e:label id="caseType" dictype="DIC_CASE_TYPE"/></a:td>
+						<a:td><e:label id="taskStatus" dictype="DIC_TASK_STATUS"/></a:td>
+						<a:td><e:label id="lastTime" format="yyyy-MM-dd hh:mm:ss"/></a:td>
+						<a:td role="TASK_RES_SEND_D" class="actiontd">
+							<e:actionlink actiontype="delete" link="/task/resSend.action.do?action=delete" linkparm="taskId"/>
+						</a:td>					
+					</a:tr>
+				</a:table>										
+			</a:form>
+		</s:view>
+		<s:scripts>
+			<s:script>
+			<![CDATA[
+			
+			]]>
+			</s:script>
+		</s:scripts>
+		<s:actions>
+			<s:action id="query" input="default" role="RES_CURRENT"/>
+		</s:actions>
+		<s:forwards>
+			<s:forward id="default" url="${res.queryTemplate}"/>
+		</s:forwards>
+	</s:function>
+
+	<s:function id="action" input="default" method="action">
+		<s:view>
+			<a:form>
+				<a:table class="formTable">	
+					<a:tr>
+						<a:td colspan="2" class="splittd"><e:label value="CURRENT_CONTROL"/></a:td>
+					</a:tr>
+					<a:tr>
+						<a:td width="20%" class="labeltd"><e:label refid="id"/></a:td>
+						<a:td><e:text id="id" required="true" description=""  max="32"/></a:td>
+					</a:tr>
+					<a:tr>
+						<a:td width="20%" class="labeltd"><e:label refid="captureTime"/></a:td>
+						<a:td><e:text id="captureTime" required="true" description="" /></a:td>
+					</a:tr>
+					<a:tr>
+						<a:td width="20%" class="labeltd"><e:label refid="title"/></a:td>
+						<a:td><e:text id="title" required="false" description=""  max="64"/></a:td>
+					</a:tr>
+					<a:tr>
+						<a:td width="20%" class="labeltd"><e:label refid="subTitle"/></a:td>
+						<a:td><e:text id="subTitle" required="false" description=""  max="64"/></a:td>
+					</a:tr>
+					<a:tr>
+						<a:td width="20%" class="labeltd"><e:label refid="status"/></a:td>
+						<a:td><e:text id="status" required="false" description="状态" /></a:td>
+					</a:tr>
+					<a:tr>
+						<a:td width="20%" class="labeltd"><e:label refid="des"/></a:td>
+						<a:td><e:text id="des" required="false" description=""  max="256"/></a:td>
+					</a:tr>
+				</a:table>	
+
+				<a:div id="control">
+					<e:gbutton value="保存" icon="icon-save" link="javascript:onSave()"/>
+					<e:blank/>
+					<e:return icon="icon-back" link="resCurrent.query.do?action=query"/>
+				</a:div>
+			</a:form>
+		</s:view>
+		<s:scripts>
+			<s:script>
+			<![CDATA[
+
+			]]>
+			</s:script>
+		</s:scripts>		
+		<s:actions>
+			<s:action id="create" name="CURRENT_CONTROL-新增" input="default" role="RES_CURRENT_C"/>
+			<s:action id="modify" name="CURRENT_CONTROL-修改" input="default" role="RES_CURRENT_M"/>
+			<s:action id="delete" name="CURRENT_CONTROL-删除" input="default" role="RES_CURRENT_D"/>
+			<s:action id="batchdel" name="CURRENT_CONTROL-批量删除" input="default" role="RES_CURRENT_D"/>	
+		</s:actions>
+		<s:forwards>
+			<s:forward id="default" url="${res.actionTemplate}"/>
+			<s:forward id="query" url="resCurrent.query.do?action=query" redirect="true"/>
+			<s:forward id="success" url="resCurrent.query.do?action=query" redirect="true"/>
+		</s:forwards>
+	</s:function>	
+	<s:function id="ctl" name="控制" input="default" method="ctl" >
+	    
+	    <s:forwards>
+			<s:forward id="default" url="/themes/inet/ctl.jsp"/>
+	
+		</s:forwards>
+	</s:function>
+</s:module>

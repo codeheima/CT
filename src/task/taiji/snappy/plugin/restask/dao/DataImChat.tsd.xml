@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE snappydb-scripts PUBLIC
+    "-//SnappyDB/SnappyDB Script DTD 1.0//EN"
+    "http://www.taiji.com.cn/snappydb-scripts-1.0.dtd" >
+<snappydb-scripts namespace="ctdb.dataImChat">
+	<default>
+		<script name="query">
+			<sql>
+			<![CDATA[
+			SELECT * FROM data_im_chat 
+			where 1=1 
+			<#if context?exists && context.isNotEmpty()>
+				and context like '%${context}%'
+	        </#if>
+			order by send_time desc
+			]]>
+			</sql>
+		</script>
+	</default>
+</snappydb-scripts>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<theme id="inet" name="标准字体" fontsize="12">
+	<headers>
+		<header name="P3P">CP=CAO PSA OUR</header>
+		<header name="X-UA-Compatible">IE=EmulateIE7</header>
+	</headers>
+	<pagination><![CDATA[
+<div class="resultPage">
+	
+	<#if page.hasPrevious>
+		<a href="javascript:toPage($('${form}'),1,${page.totalPage},'${page.mark}');">首页 </a><a href="javascript:toPage($('${form}'),${page.previousPage},${page.totalPage},'${page.mark}');">上一页</a>
+	<#else>
+		<span>首页 </span>上一页
+	</#if>
+	
+	<span >第${page.currentPage}页</span>
+	
+	<#if page.maxDisplayRecords gt 0 && page.totalRecords gt page.maxDisplayRecords >
+		共有${page.totalRecords}条记录 &nbsp;最大显示${page.totalPage}页${page.maxDisplayRecords}条记录
+	<#else>
+		共${page.totalPage}页 ${page.totalRecords}条记录
+	</#if>
+	
+	<#if page.hasNext>
+		<a href="javascript:toPage($('${form}'),${page.nextPage},${page.totalPage},'${page.mark}');">下一页</a><a href="javascript:toPage($('${form}'),${page.totalPage},${page.totalPage},'${page.mark}');"> 末页</a>
+	<#else>
+		下一页<span> 末页</span>
+	</#if>
+	
+	<span style="font-size:12px;">跳转到第</span>
+	<input style="vertical-align:middle;" type="text" value="1" size="1" onkeypress="return(event.keyCode>=48&&event.keyCode <=57)" onpaste="return false" onkeydown="if(event.keyCode==13){toPage($('${form}'),$(this).val(),${page.totalPage},'${page.mark}');return false;}"/>页
+		 <img src="${util.url("/themes/inet/images/button_fenye.png")}" 
+		 		onclick = "toPage($('${form}'),$(this).prev().val(),${page.totalPage},'${page.mark}')"
+		 		style="cursor:hand;vertical-align:middle;"
+		 />
+</div>	
+	]]></pagination>
+</theme>

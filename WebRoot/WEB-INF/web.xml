@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4" 
+xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee   
+http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+
+    
+  <display-name>Snappy Web Framework Example</display-name>
+  <filter>
+    <filter-name>Snappy Web Core Filter</filter-name>
+    <filter-class>taiji.snappy.webcore.filter.SnappyWebCoreFilter</filter-class>
+    <init-param>
+      <param-name>encode</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>Snappy Web Core Filter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  
+  
+  <context-param>
+    <param-name>WebContextListener</param-name>
+    <param-value>taiji.snappy.webcore.SnappyWebContextListener</param-value>
+  </context-param>
+  <listener>
+    <listener-class>taiji.snappy.webcore.SnappyWebSessionMonitor</listener-class>
+  </listener>
+  <servlet>
+    <servlet-name>ActionServlet</servlet-name>
+    <servlet-class>taiji.snappy.web.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>class://taiji/snappy/webcore/snappy-web.cfg.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ActionServlet</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+
+  <session-config>
+    <session-timeout>5</session-timeout>
+  </session-config>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <jsp-config>
+    <taglib>
+      <taglib-uri>/taiji-snappy-web</taglib-uri>
+      <taglib-location>/WEB-INF/tlds/snappy-web-tag.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>/taiji-snappy-web-element</taglib-uri>
+      <taglib-location>/WEB-INF/tlds/snappy-web-element-tag.tld
+			</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>/taiji-snappy-web-core</taglib-uri>
+      <taglib-location>/WEB-INF/tlds/snappy-webcore-tag.tld
+			</taglib-location>
+    </taglib>
+  </jsp-config>
+  <servlet>
+    <display-name>Apache-Axis Servlet</display-name>
+    <servlet-name>AxisServlet</servlet-name>
+    <servlet-class>org.apache.axis.transport.http.AxisServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AxisServlet</servlet-name>
+    <url-pattern>/servlet/AxisServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AxisServlet</servlet-name>
+    <url-pattern>*.jws</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AxisServlet</servlet-name>
+    <url-pattern>/services/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <display-name>Axis Admin Servlet</display-name>
+    <servlet-name>AdminServlet</servlet-name>
+    <servlet-class>org.apache.axis.transport.http.AdminServlet</servlet-class>
+    <load-on-startup>100</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminServlet</servlet-name>
+    <url-pattern>/servlet/AdminServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
